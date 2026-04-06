@@ -5,7 +5,7 @@
 </h2>
 <ol class="list-decimal list-inside space-y-1">
     {% for name, count in top_users %}
-        <img src="https://raw.githubusercontent.com/OneEye134/lyramad/refs/heads/main/api/pfp/{{ name | replace('/', '') | replace('\\', '') }}.jpg" alt="{{ r.name }}" class="w-12 h-12 rounded-full mr-4 object-cover">
+        <img src="https://raw.githubusercontent.com/OneEye134/lyramad/refs/heads/main/api/pfp/{{ name | replace('/', '') | replace('\\', '') }}.jpg" alt="{{ name }}" class="w-12 h-12 rounded-full mr-4 object-cover">
         <li>{{ name }} - <span class="font-bold">{{ count }}</span> profanities</li>
     {% endfor %}
 </ol>
