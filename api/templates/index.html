@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>LyraMad</title>
-</head>
-<body>
-<h1>Welcome to LyraMad</h1>
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-xl font-semibold mb-4">Categories</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    {% for cat in categories %}
+        <a href="/leaderboard/{{ cat }}" class="bg-gray-700 p-4 rounded hover:bg-yellow-500 hover:text-gray-900 text-center font-bold">{{ cat | capitalize }}</a>
+    {% endfor %}
+</div>
 
-<h2>Categories</h2>
-<ul>
-  {% for cat in categories %}
-    <li>{{ cat }}</li>
-  {% endfor %}
-</ul>
-
-<h2>Search</h2>
-<form action="/search">
-    <input type="text" name="q" placeholder="Search category or profanity">
-    <button type="submit">Search</button>
+<h2 class="text-xl font-semibold mb-2">Search Profanities</h2>
+<form action="/search" class="flex gap-2 mb-6">
+    <input type="text" name="q" placeholder="Search category or word" class="flex-1 p-2 rounded text-gray-900">
+    <button type="submit" class="bg-yellow-400 text-gray-900 px-4 rounded hover:bg-yellow-500">Search</button>
 </form>
-
-<a href="/leaderboard">Leaderboard</a>
-</body>
-</html>
+{% endblock %}

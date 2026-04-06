@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LyraMad</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans min-h-screen flex flex-col">
+<header class="bg-gray-800 p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-yellow-400">LyraMad</h1>
+    <nav class="space-x-4">
+        <a href="/" class="hover:text-yellow-300">Home</a>
+        <a href="/leaderboard" class="hover:text-yellow-300">Leaderboard</a>
+    </nav>
+</header>
+<main class="flex-1 p-6">
+    {% block content %}{% endblock %}
+</main>
+<footer class="bg-gray-800 text-gray-400 text-center p-4">
+    LyraMad &copy; 2026
+    <p>scraped at April 4, 8:23pm-8:53pm</p>
+</footer>
+</body>
+</html>

@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Leaderboard</title>
-</head>
-<body>
-<h1>Top Swearers</h1>
-<ol>
-  {% for name, count in top_users %}
-    <li>{{ name }} - {{ count }} profanities</li>
-  {% endfor %}
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-xl font-semibold mb-4">
+    {% if word %}Leaderboard for "{{ word | capitalize }}" {% else %}Overall Leaderboard{% endif %}
+</h2>
+<ol class="list-decimal list-inside space-y-1">
+    {% for name, count in top_users %}
+        <li>{{ name }} - <span class="font-bold">{{ count }}</span> profanities</li>
+    {% endfor %}
 </ol>
-<a href="/">Back</a>
-</body>
-</html>
+<a href="/" class="mt-4 inline-block text-yellow-400 hover:text-yellow-300">Back to Home</a>
+{% endblock %}
