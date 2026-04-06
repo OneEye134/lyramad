@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LyraMad</title>
+</head>
+<body>
+<h1>Welcome to LyraMad</h1>
+
+<h2>Categories</h2>
+<ul>
+  {% for cat in categories %}
+    <li>{{ cat }}</li>
+  {% endfor %}
+</ul>
+
+<h2>Search</h2>
+<form action="/search">
+    <input type="text" name="q" placeholder="Search category or profanity">
+    <button type="submit">Search</button>
+</form>
+
+<a href="/leaderboard">Leaderboard</a>
+</body>
+</html>

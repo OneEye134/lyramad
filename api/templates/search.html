@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Search Results</title>
+</head>
+<body>
+<h1>Search Results for "{{ query }}"</h1>
+{% if results %}
+    <ul>
+    {% for r in results %}
+        <li><strong>{{ r.word }}</strong>: {{ r.msg }} <em>({{ r.name }}, {{ r.date }})</em></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No results found.</p>
+{% endif %}
+<a href="/">Back</a>
+</body>
+</html>

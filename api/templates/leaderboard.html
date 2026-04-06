@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Leaderboard</title>
+</head>
+<body>
+<h1>Top Swearers</h1>
+<ol>
+  {% for name, count in top_users %}
+    <li>{{ name }} - {{ count }} profanities</li>
+  {% endfor %}
+</ol>
+<a href="/">Back</a>
+</body>
+</html>
