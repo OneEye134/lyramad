@@ -3,11 +3,16 @@
 <h2 class="text-xl font-semibold mb-4">
     {% if word %}Leaderboard for "{{ word | capitalize }}" {% else %}Overall Leaderboard{% endif %}
 </h2>
+
+{% set grand_total = top_users | map(attribute=1) | sum %}  {# Sum all counts #}
+<p class="mb-2 font-semibold">Grand Total: {{ grand_total }} profanities</p>
+
 <ol class="list-decimal list-inside space-y-1">
     {% for name, count in top_users %}
         <img src="https://raw.githubusercontent.com/OneEye134/lyramad/refs/heads/main/api/pfp/{{ name | replace('/', '') | replace('\\', '') }}.jpg" alt="{{ name }}" class="w-12 h-12 rounded-full mr-4 object-cover">
         <li>{{ name }} - <span class="font-bold">{{ count }}</span> profanities</li>
     {% endfor %}
 </ol>
+
 <a href="/" class="mt-4 inline-block text-yellow-400 hover:text-yellow-300">Back to Home</a>
 {% endblock %}
